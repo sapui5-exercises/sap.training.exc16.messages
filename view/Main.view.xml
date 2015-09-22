@@ -1,0 +1,42 @@
+<mvc:View
+		xmlns:core="sap.ui.core"
+		xmlns:f="sap.ui.layout.form"
+		xmlns:l="sap.ui.layout"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns="sap.m"
+		controllerName="sap.training.exc16.messages.view.Main"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+		
+	<f:SimpleForm>
+		<f:content>
+			<Label text="Carrier Id"/>
+			<Input value="{ path: 'input>/carrierId', type: 'sap.ui.model.type.String', constraints: {minLength: 1, maxLength: 3} }"/>
+			<Button press="onShowCarrier" text="Show Carrier Name"/>
+			<Label text="Carrier Name"/>
+			<Input enabled="false" value="{travel>Carrname}"/>
+		</f:content>
+	</f:SimpleForm>
+	
+	<Table id="idMsgTable" items="{message>/}">
+		<headerToolbar>
+			<Toolbar>
+				<content>
+					<Button text="Delete All Messages" press="onDeleteMessages" type="Emphasized"/>
+				</content>	
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Messages"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<MessageStrip showIcon="true" text="{message>message}" type="{message>type}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+</mvc:View>

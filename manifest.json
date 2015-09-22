@@ -1,0 +1,48 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "sap.training.exc16.messages",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"TravelService": {
+				"uri": "/sap/opu/odata/sap/ZBC_TRAVEL_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "SAPUI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": "sap.training.exc16.messages.view.Main",
+		"handleValidation": true,
+		"dependencies": {
+			"minUI5Version": "1.30",
+			"libs": {
+				"sap.m": {}
+			}
+		},
+		"models": {
+			"travel": {
+				"dataSource": "TravelService"
+			}
+		}
+	}
+}
