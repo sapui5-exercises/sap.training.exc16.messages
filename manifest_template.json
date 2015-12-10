@@ -40,7 +40,10 @@
 		},
 		"models": {
 			"<...>": {
-				"dataSource": "<...>"
+				"dataSource": "<...>",
+				"settings": {
+					"disableHeadRequestForToken": true
+				}
 			}
 		}
 	}
